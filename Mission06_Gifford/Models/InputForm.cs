@@ -13,6 +13,6 @@ namespace Mission06_Gifford.Models
         public string rating { get; set; }
         public bool edited { get; set; }
         public string? lentto { get; set; }
-        public string? notes { get; set; }
+        public string? notes { get; set; }//these are optional so they have question marks
     }
 }

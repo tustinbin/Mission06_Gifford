@@ -8,7 +8,7 @@ namespace Mission06_Gifford.Controllers
     {
         private InputFormContext _context;
         public HomeController(InputFormContext temp) {
-            //Constructor
+            //Constructor or liason!
             _context = temp;
         }
         public IActionResult Index()
@@ -26,7 +26,7 @@ namespace Mission06_Gifford.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpPost] //saves the changes and moves to confirmation page
         public IActionResult InputFilmCollection(InputForm response) {
             _context.Movies.Add(response);
             _context.SaveChanges();
