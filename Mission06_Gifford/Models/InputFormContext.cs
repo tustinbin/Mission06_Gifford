@@ -8,5 +8,8 @@ namespace Mission06_Gifford.Models
         { }
 
         public DbSet<InputForm> Movies { get; set; }
+        public DbSet<Category> Categories { get; set; }
+
+
     }
 }

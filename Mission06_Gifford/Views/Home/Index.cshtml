@@ -7,3 +7,46 @@
     <img src="~/img/joel hilton.jpg" />
 
 </div>
+<br />
+<br />
+
+
+@model List<InputForm>
+@*making the nice header*@
+<table class="table table-bordered">
+    <thead class="fw-bold">
+        <tr>
+            <td>Movie Title</td>
+            <td>Category</td>
+            <td>Year</td>
+            <td>Director</td>
+            <td>Rating</td>
+            <td>Edited?</td>
+            <td>Lent To?</td>
+            <td>Copied To Plex?</td>
+            <td>Notes</td>
+            <td>Edit Entry</td>
+            <td>Delete Entry</td>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var temp in Model)
+    {
+        <tr>
+            <td>@temp.Title</td>
+            <td>@temp.Category?.CategoryName</td>
+            <td>@temp.Year</td>
+            <td>@temp.Director</td>
+            <td>@temp.Rating</td>
+            <td>@temp.Edited</td>
+            <td>@temp.LentTo</td>
+            <td>@temp.CopiedToPlex</td>
+            <td>@temp.Notes</td>
+
+            <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@temp.MovieId">Edit</a></td>
+            <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@temp.MovieId">Delete</a></td>
+        </tr>
+
+    }
+    </tbody>
+</table>
